@@ -1,0 +1,14 @@
+#!/bin/sh
+set -eu
+
+exit_code=0
+
+if ! stylelint "$@" '**/*.{css,scss}'; then
+  exit_code=1
+fi
+
+if ! eslint --ext .ts,.tsx --ignore-path .gitignore "$@" .; then
+  exit_code=1
+fi
+
+exit $exit_code
