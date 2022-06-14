@@ -3,7 +3,7 @@ set -eu
 
 exit_code=0
 
-if ! stylelint "$@" '**/*.{css,scss}'; then
+if ! stylelint --ignore-path .gitignore "$@" '**/*.{css,scss}'; then
   exit_code=1
 fi
 

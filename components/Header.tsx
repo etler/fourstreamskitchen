@@ -9,7 +9,7 @@ import PinIcon from "../public/icons/pin.svg"
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null)
-  const scrollListener: EventListener = (event) => {
+  const scrollListener: EventListener = () => {
     headerRef.current?.style.setProperty("--header-scroll-position", `${window.scrollY}`)
   }
   useEffect(() => {

@@ -1,13 +1,14 @@
 .logo {
   display: flex;
+  height: 50px;
+  object-fit: contain;
+  object-position: 0;
   margin-right: 20px;
-  color: white;
-  font-size: 50px;
-  font-weight: 600;
 }
 
 @media (max-width: 530px) {
   .logo {
+    width: 100%;
     padding: 10px 0;
     font-size: 30px;
   }

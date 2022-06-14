@@ -7,8 +7,6 @@ import { Hero } from "./Hero"
 import styles from "./Main.module.scss"
 import { Hours } from "./Hours"
 
-export interface mainProps {}
-
 export const Main: React.FC = () => {
   return (
     <>
