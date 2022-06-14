@@ -1,0 +1,65 @@
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 0 40px;
+  padding: 0 30px;
+  & ul {
+    column-count: 3;
+    column-gap: 30px;
+    column-width: 320px;
+    margin: 15px 0 40px;
+    padding: 0;
+  }
+  & li {
+    margin: 0 0 10px;
+    font-size: 18px;
+    list-style: none;
+    break-inside: avoid-column;
+  }
+}
+.title {
+  margin: 30px 0;
+  font-size: 50px;
+  text-align: center;
+}
+.mealTitle {
+  display: flex;
+  margin: 10px 0 5px;
+  border-bottom: var(--color-green-900) solid 2px;
+  font-size: 30px;
+}
+.section {
+  margin: 20px 0;
+}
+.sectionTitle {
+  margin: 0 0 5px;
+  font-size: 24px;
+}
+.item {
+  display: flex;
+  justify-content: space-between;
+}
+h5.itemTitle {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 16px;
+}
+.itemPrice {
+  flex-shrink: 0;
+  margin-left: 10px;
+  font-size: 16px;
+}
+.itemIcons {
+  margin: 0 4px;
+  font-size: 10px;
+}
+.description {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: italic;
+}

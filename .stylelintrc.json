@@ -12,6 +12,7 @@
     "declaration-colon-newline-after": null,
     "rule-empty-line-before": "never-multi-line",
     "prettier/prettier": true,
+    "selector-class-pattern": "[a-z][a-zA-Z]+(-[a-z][a-zA-Z])?",
     "max-nesting-depth": [
       1,
       {

@@ -1,0 +1,45 @@
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px 60px;
+  background-color: var(--color-green-300);
+}
+.title {
+  margin-top: 20px;
+  font-size: 30px;
+  font-weight: 600;
+}
+.hourTitle {
+  display: flex;
+  width: 400px;
+  margin: 20px 0 10px;
+  border-bottom: var(--color-green-900) solid 2px;
+  font-size: 24px;
+  font-weight: 600;
+}
+.hours {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  font-size: 20px;
+}
+.time {
+  margin-left: 10px;
+  font-weight: 300;
+  font-style: italic;
+}
+.days {
+  margin-right: 10px;
+  font-weight: 400;
+}
+
+@media (max-width: 530px) {
+  .hourTitle {
+    width: 100%;
+  }
+  .hours {
+    width: 100%;
+    font-size: 20px;
+  }
+}

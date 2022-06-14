@@ -1,0 +1,81 @@
+.header {
+  --header-scroll-position: 0;
+  --header-opacity: calc((var(--header-scroll-position) + 1600) / 2000);
+
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  color: white;
+  z-index: 100;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+    background-image: url("/bamboo.svg");
+    background-repeat: repeat;
+    background-position: center;
+    background-size: 800px;
+    z-index: -1;
+  }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: var(--header-opacity);
+    background-color: var(--color-green-700);
+    z-index: -1;
+  }
+}
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  padding: 0 20px 20px;
+}
+.infoBar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 0;
+}
+.info {
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.infoIcon {
+  display: flex;
+  margin: 0 5px 0 10px;
+  & svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+.linkBar {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+.link {
+  padding: 0 20px;
+  font-size: 30px;
+}
+
+@media (max-width: 530px) {
+  .infoBar {
+    padding-right: 10px;
+    padding-left: 10px;
+  }
+  .link {
+    padding: 0 20px 0 0;
+    font-size: 20px;
+  }
+}
