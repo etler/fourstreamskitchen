@@ -8,7 +8,7 @@
   flex-wrap: wrap;
   align-items: baseline;
   width: 100%;
-  padding: 10px 20px 20px;
+  padding: 20px;
   color: white;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / min(calc((var(--header-scroll-position)) / 800), 0.3));
   letter-spacing: 0.05em;
@@ -92,5 +92,8 @@
   .link {
     padding: 0 20px 0 0;
     font-size: 20px;
+  }
+  .nav {
+    padding-top: 10px;
   }
 }
