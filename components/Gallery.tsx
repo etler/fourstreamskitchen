@@ -54,7 +54,7 @@ export const Gallery: React.FC = () => {
   }, [listRef])
   const prev = () => {
     const visibleChildren = getVisibleChildren(listRef.current)
-    visibleChildren[0].previousElementSibling?.scrollIntoView({
+    visibleChildren[0]?.previousElementSibling?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
@@ -62,7 +62,7 @@ export const Gallery: React.FC = () => {
   }
   const next = () => {
     const visibleChildren = getVisibleChildren(listRef.current)
-    visibleChildren[visibleChildren.length - 1].nextElementSibling?.scrollIntoView({
+    visibleChildren[visibleChildren.length - 1]?.nextElementSibling?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
