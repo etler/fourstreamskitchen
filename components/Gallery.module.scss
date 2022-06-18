@@ -53,9 +53,11 @@
   }
   &_left {
     left: 0;
+    padding-right: 30px;
   }
   &_right {
     right: 0;
+    padding-left: 30px;
   }
   &_hide {
     opacity: 0;
@@ -66,7 +68,6 @@
 @media (max-width: 530px) {
   .nav {
     height: 100%;
-    padding: 10px;
     & svg {
       width: 24px;
       height: 24px;
