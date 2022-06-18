@@ -1,7 +1,8 @@
 .hero {
   display: flex;
   width: 100%;
-  height: min(100vh, 1080px);
+  height: calc(min(100vh, 1080px) + 80px);
+  margin-top: -200px;
   background-image: url("/hero.jpg");
   background-repeat: no-repeat;
   background-position: center;

@@ -1,13 +1,17 @@
-.header {
+.nav {
   --header-scroll-position: 0;
   --header-opacity: calc((var(--header-scroll-position) + 1600) / 2000);
 
-  position: fixed;
+  position: sticky;
+  top: 0;
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: baseline;
   width: 100%;
+  padding: 20px;
   color: white;
   box-shadow: 0 0 10px 5px rgb(0 0 0 / min(calc((var(--header-scroll-position)) / 800), 0.3));
+  letter-spacing: 0.1em;
   z-index: 100;
   &::after {
     content: "";
@@ -35,19 +39,26 @@
     z-index: -1;
   }
 }
-.nav {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  padding: 0 20px 20px;
-  letter-spacing: 0.1em;
-}
 .infoBar {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 10px 20px 0;
+  color: white;
   letter-spacing: 0.1em;
+  z-index: 0;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0.8;
+    background-color: var(--color-green-700);
+    z-index: -1;
+  }
 }
 .info {
   display: flex;
