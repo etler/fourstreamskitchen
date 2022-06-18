@@ -52,7 +52,7 @@ const dinnerSections: MenuSectionProps[] = [
       { name: "Chicken with Cream Corn Soup", type: "size", price: { small: 10.5, large: 14.5 } },
       { name: "Miso Seaweed Soup", type: "size", price: { small: 9, large: 13 } },
     ],
-    description: "small: 2-3\u00A0\u00A0\u00A0large: 4-5 ",
+    description: ["small: serves 2 to 3", "large: serves 4 to 5 "],
   },
   {
     title: "Beef",
