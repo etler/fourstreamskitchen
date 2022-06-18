@@ -28,7 +28,10 @@ const getVisibleChildren = (list: HTMLElement | null) => {
   return [...list.childNodes].flatMap((item) => {
     if (item instanceof HTMLElement) {
       const bounds = item.getBoundingClientRect()
-      if (bounds.left >= listBounds.left - 10 && bounds.right <= listBounds.right + 10) {
+      if (
+        bounds.left >= listBounds.left - bounds.width / 2 &&
+        bounds.right <= listBounds.right + bounds.width / 2
+      ) {
         return item
       }
     }
@@ -54,7 +57,9 @@ export const Gallery: React.FC = () => {
   }, [listRef])
   const prev = () => {
     const visibleChildren = getVisibleChildren(listRef.current)
-    visibleChildren[0]?.previousElementSibling?.scrollIntoView({
+    const firstVisibleChild = visibleChildren[0]
+    const target = firstVisibleChild?.previousElementSibling ?? firstVisibleChild
+    target?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
@@ -62,7 +67,9 @@ export const Gallery: React.FC = () => {
   }
   const next = () => {
     const visibleChildren = getVisibleChildren(listRef.current)
-    visibleChildren[visibleChildren.length - 1]?.nextElementSibling?.scrollIntoView({
+    const lastVisibleChild = visibleChildren[visibleChildren.length - 1]
+    const target = lastVisibleChild?.nextElementSibling ?? lastVisibleChild
+    target?.scrollIntoView({
       behavior: "smooth",
       block: "nearest",
       inline: "center",
