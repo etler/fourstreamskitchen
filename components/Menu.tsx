@@ -52,6 +52,7 @@ const dinnerSections: MenuSectionProps[] = [
       { name: "Chicken with Cream Corn Soup", type: "size", price: { small: 10.5, large: 14.5 } },
       { name: "Miso Seaweed Soup", type: "size", price: { small: 9, large: 13 } },
     ],
+    description: "small: 2-3\u00A0\u00A0\u00A0large: 4-5 ",
   },
   {
     title: "Beef",
@@ -253,8 +254,10 @@ const dinnerSections: MenuSectionProps[] = [
       {
         name: "Soup Noodle",
         price: 13.5,
-        description:
-          "Chicken or beef, pork, chicken, or extra vegetables. Shrimp or combination $1.00 extra",
+        description: [
+          "Choice of beef, pork, chicken, or vegetables",
+          "Shrimp or combination $1.00 extra",
+        ],
       },
     ],
   },
@@ -314,16 +317,20 @@ const lunchSections: MenuSectionProps[] = [
       { name: "Spicy Garlic Prawns", price: 12.5, spiciness: 1 },
       { name: "Prawns with Green Beans", price: 12.5 },
     ],
-    description:
-      "Served with Egg Roll, Hot & Sour Soup or Wonton Soup, Steamed Rice or Fried Rice. Cup Soup $3.00",
+    description: [
+      "Served with Egg Roll, Hot & Sour Soup or Wonton Soup, Steamed Rice or Fried Rice",
+      "Cup Soup $3.00 extra",
+    ],
   },
   {
     items: [
       {
         name: "Chow Mein or Chow Fun",
         price: 12,
-        description:
-          "Choice of Beef, Pork, Chicken, or Vegetables. Shrimp or Combination $1.00 Extra",
+        description: [
+          "Choice of Beef, Pork, Chicken, or Vegetables",
+          "Shrimp or Combination $1.00 Extra",
+        ],
       },
       { name: "Pan Fried Noodle Hong Kong Style", price: 15 },
     ],
@@ -339,9 +346,14 @@ export const Menu: React.FC = () => {
         <h3 className={styles.mealTitle}>Lunch</h3>
         <span className={styles.description}>Monday - Saturday: 11:30am - 2:30pm</span>
         <div className={styles.section}>
-          {lunchSections.map((section) => (
-            <MenuSection key={section.title ?? section.description} {...section} />
-          ))}
+          {lunchSections.map((section) => {
+            return (
+              <MenuSection
+                key={JSON.stringify(section.title ?? section.description)}
+                {...section}
+              />
+            )
+          })}
         </div>
         <h3 className={styles.mealTitle}>Dinner</h3>
         <span className={styles.description}>Sunday - Thursday: 4:30pm - 9:30pm</span>
@@ -362,7 +374,7 @@ export const Menu: React.FC = () => {
 interface MenuSectionProps {
   title?: string
   items: MenuItemProps[]
-  description?: string
+  description?: string | string[]
 }
 
 const MenuSection: React.FC<MenuSectionProps> = ({
@@ -373,7 +385,11 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   return (
     <section>
       <h4 className={styles.sectionTitle}>{title}</h4>
-      <span className={styles.description}>{description}</span>
+      {(typeof description === "string" ? [description] : description)?.map((text) => (
+        <span key={text} className={styles.description}>
+          {text}
+        </span>
+      ))}
       <ul>
         {items.map((item) => (
           <MenuItem key={item.name} {...item} />
@@ -385,7 +401,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
 
 interface MenuItemBaseProps {
   name: string
-  description?: string
+  description?: string | string[]
   spiciness?: 0 | 1 | 2
   vegetarian?: boolean
   vegan?: boolean
@@ -431,7 +447,11 @@ const MenuItem: React.FC<MenuItemProps> = ({
         </h5>
         <span className={styles.itemPrice}>{priceString}</span>
       </span>
-      <span className={styles.description}>{description}</span>
+      {(typeof description === "string" ? [description] : description)?.map((text) => (
+        <span key={text} className={styles.description}>
+          {text}
+        </span>
+      ))}
     </li>
   )
 }

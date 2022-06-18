@@ -13,6 +13,8 @@
     padding: 0;
   }
   & li {
+    display: flex;
+    flex-direction: column;
     margin: 0 0 10px;
     font-size: 18px;
     list-style: none;
@@ -61,6 +63,7 @@ h5.itemTitle {
   font-size: 10px;
 }
 .description {
+  display: flex;
   margin: 0;
   font-size: 16px;
   font-weight: 300;
