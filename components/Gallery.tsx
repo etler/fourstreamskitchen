@@ -28,7 +28,7 @@ const getVisibleChildren = (list: HTMLElement | null) => {
   return [...list.childNodes].flatMap((item) => {
     if (item instanceof HTMLElement) {
       const bounds = item.getBoundingClientRect()
-      if (bounds.left >= listBounds.left && bounds.right <= listBounds.right) {
+      if (bounds.left >= listBounds.left - 10 && bounds.right <= listBounds.right + 10) {
         return item
       }
     }
@@ -46,8 +46,8 @@ export const Gallery: React.FC = () => {
       return
     }
     const onScroll = () => {
-      setShowLeftNav(list.scrollLeft > 0)
-      setShowRightNav(list.scrollLeft + list.clientWidth < list.scrollWidth)
+      setShowLeftNav(list.scrollLeft > 10)
+      setShowRightNav(list.scrollLeft + list.clientWidth < list.scrollWidth - 10)
     }
     list.addEventListener("scroll", onScroll)
     return () => list.removeEventListener("scroll", onScroll)
