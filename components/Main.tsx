@@ -6,6 +6,7 @@ import { Hero } from "./Hero"
 
 import styles from "./Main.module.scss"
 import { Hours } from "./Hours"
+import { Gallery } from "./Gallery"
 
 export const Main: React.FC = () => {
   return (
@@ -14,6 +15,7 @@ export const Main: React.FC = () => {
         <Header />
         <Hero />
         <Hours />
+        <Gallery />
         <Menu />
         <Location />
       </main>
