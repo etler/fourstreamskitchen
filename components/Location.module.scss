@@ -1,5 +1,36 @@
 .location {
   display: flex;
   width: 100%;
-  height: min(800px, 100vh);
+  height: min(1000px, calc(100vh - 100px));
+  border: none;
+  outline: none;
+}
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px 60px;
+  background-color: var(--color-green-300);
+}
+.title {
+  display: flex;
+  width: 400px;
+  margin: 20px 0 10px;
+  border-bottom: var(--color-green-900) solid 2px;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.info {
+  display: flex;
+  justify-content: space-between;
+  width: 400px;
+  font-size: 20px;
+}
+
+@media (max-width: 530px) {
+  .info {
+    width: 100%;
+  }
 }
