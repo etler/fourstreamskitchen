@@ -40,7 +40,9 @@ export const Header: React.FC = () => {
         </a>
       </div>
       <div className={styles.nav} ref={headerRef}>
-        <Logo />
+        <a href="#">
+          <Logo />
+        </a>
         <div className={styles.linkBar}>
           <Link href="/order">
             <a className={styles.link}>Order Online</a>
