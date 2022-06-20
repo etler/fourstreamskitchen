@@ -17,7 +17,7 @@ const dinnerSections: MenuSectionProps[] = [
         name: "Assorted Appetizers",
         price: 12,
         description:
-          "For two, a combination of foil wrapped chicken, fried prawn, egg roll, and fried wonton",
+          "For two, a combination of B.B.Q. Pork, Fried Prawn, Egg Roll, and Fried Wonton",
       },
       {
         name: "Crab Rangoon (8)",
