@@ -13,12 +13,7 @@
     padding: 0;
   }
   & li {
-    display: flex;
-    flex-direction: column;
-    margin: 0 0 10px;
-    font-size: 18px;
     list-style: none;
-    break-inside: avoid-column;
   }
 }
 .title {
@@ -44,8 +39,12 @@
   font-size: 24px;
 }
 .item {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  margin: 0 0 10px;
+  font-size: 18px;
+  break-inside: avoid;
 }
 h5.itemTitle {
   display: flex;
@@ -70,4 +69,5 @@ h5.itemTitle {
   font-size: 16px;
   font-weight: 300;
   font-style: italic;
+  grid-column: 1 / 3;
 }

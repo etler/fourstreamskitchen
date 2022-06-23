@@ -439,16 +439,14 @@ const MenuItem: React.FC<MenuItemProps> = ({
         )}\u00a0\u00a0\u00a0lg:\u00a0${priceFormatter.format(price.large)}`
       : priceFormatter.format(price)
   return (
-    <li>
-      <span className={styles.item}>
-        <h5 className={styles.itemTitle}>
-          {name}
-          {spiciness > 0 && (
-            <span className={styles.itemIcons}>{new Array(spiciness).fill("🌶️")}</span>
-          )}
-        </h5>
-        <span className={styles.itemPrice}>{priceString}</span>
-      </span>
+    <li className={styles.item}>
+      <h5 className={styles.itemTitle}>
+        {name}
+        {spiciness > 0 && (
+          <span className={styles.itemIcons}>{new Array(spiciness).fill("🌶️")}</span>
+        )}
+      </h5>
+      <span className={styles.itemPrice}>{priceString}</span>
       {(typeof description === "string" ? [description] : description)?.map((text) => (
         <span key={text} className={styles.description}>
           {text}
