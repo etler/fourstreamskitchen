@@ -443,7 +443,9 @@ const MenuItem: React.FC<MenuItemProps> = ({
       <span className={styles.item}>
         <h5 className={styles.itemTitle}>
           {name}
-          {spiciness && <span className={styles.itemIcons}>{new Array(spiciness).fill("🌶️")}</span>}
+          {spiciness > 0 && (
+            <span className={styles.itemIcons}>{new Array(spiciness).fill("🌶️")}</span>
+          )}
         </h5>
         <span className={styles.itemPrice}>{priceString}</span>
       </span>
