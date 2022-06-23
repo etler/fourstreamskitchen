@@ -12,6 +12,7 @@ export const Hero: React.FC = () => {
         height={2048}
         layout="raw"
         className={[styles.heroImage, styles.heroImage_desktop].join(" ")}
+        alt="Hero Image"
       />
       <ExportedImage
         src="/hero-mobile.jpg"
@@ -19,6 +20,7 @@ export const Hero: React.FC = () => {
         height={2048}
         layout="raw"
         className={[styles.heroImage, styles.heroImage_mobile].join(" ")}
+        alt="Hero Image"
       />
     </div>
   )
