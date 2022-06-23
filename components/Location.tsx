@@ -21,7 +21,7 @@ export const Location: React.FC = () => {
             (831) 685-2121
           </a>
         </div>
-        <iframe className={styles.location} src="/maps.html"></iframe>
+        <iframe className={styles.location} src="/maps.html" loading="lazy"></iframe>
       </>
     </Section>
   )
