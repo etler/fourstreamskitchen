@@ -383,7 +383,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
   description,
 }: MenuSectionProps) => {
   return (
-    <section>
+    <>
       <h4 className={styles.sectionTitle}>{title}</h4>
       {(typeof description === "string" ? [description] : description)?.map((text) => (
         <span key={text} className={styles.description}>
@@ -395,7 +395,7 @@ const MenuSection: React.FC<MenuSectionProps> = ({
           <MenuItem key={item.name} {...item} />
         ))}
       </ul>
-    </section>
+    </>
   )
 }
 
