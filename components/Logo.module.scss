@@ -3,10 +3,11 @@
 }
 .logo {
   display: flex;
+  width: auto;
   height: 50px;
+  margin-right: 20px;
   object-fit: contain;
   object-position: 0;
-  margin-right: 20px;
 }
 
 @media (max-width: 530px) {

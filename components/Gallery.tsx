@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react"
+import ExportedImage from "next-image-export-optimizer"
+
 import styles from "./Gallery.module.scss"
 
 import LeftCaretIcon from "../public/icons/left-caret.svg"
@@ -93,13 +95,17 @@ export const Gallery: React.FC = () => {
         <div className={styles.list} ref={listRef}>
           {images.map((image) => {
             return (
-              <img
-                key={image}
-                src={`/gallery/${image}`}
-                alt="Food"
-                loading="lazy"
-                className={styles.image}
-              />
+              <div key={image} className={styles.imageContainer}>
+                <ExportedImage
+                  src={`/gallery/${image}`}
+                  alt="Food"
+                  loading="lazy"
+                  className={styles.image}
+                  layout="raw"
+                  width={600}
+                  height={400}
+                />
+              </div>
             )
           })}
         </div>
