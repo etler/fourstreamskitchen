@@ -1,5 +1,7 @@
 name: Build and Deploy
 on: [push]
+env:
+  NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.NEXT_PUBLIC_GA_MEASUREMENT_ID }}
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
