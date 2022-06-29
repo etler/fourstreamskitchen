@@ -7,6 +7,7 @@ import { Logo } from "./Logo"
 
 import PhoneIcon from "../public/icons/phone.svg"
 import PinIcon from "../public/icons/pin.svg"
+import { event } from "nextjs-google-analytics"
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null)
@@ -22,7 +23,11 @@ export const Header: React.FC = () => {
   return (
     <>
       <div className={styles.infoBar}>
-        <a href="tel:8316852121" className={styles.info}>
+        <a
+          href="tel:8316852121"
+          className={styles.info}
+          onClick={() => event("Clicked Header Phone")}
+        >
           <span className={styles.infoIcon}>
             <PhoneIcon />
           </span>
@@ -32,6 +37,7 @@ export const Header: React.FC = () => {
           href="https://www.google.com/maps?q=7960+Soquel+Drive,+Aptos,+CA+95003"
           target="_blank"
           className={styles.info}
+          onClick={() => event("Clicked Header Maps")}
         >
           <span className={styles.infoIcon}>
             <PinIcon />
@@ -40,20 +46,20 @@ export const Header: React.FC = () => {
         </a>
       </div>
       <div className={styles.nav} ref={headerRef}>
-        <a href="#">
+        <a href="#" onClick={() => event("Clicked Header Logo")}>
           <Logo />
         </a>
         <div className={styles.linkBar}>
-          <Link href="/order">
+          <Link href="/order" onClick={() => event("Clicked Header Order Link")}>
             <a className={styles.link}>Order Online</a>
           </Link>
-          <Link href="#hours">
+          <Link href="#hours" onClick={() => event("Clicked Header Hours Link")}>
             <a className={styles.link}>Hours</a>
           </Link>
-          <Link href="#menu">
+          <Link href="#menu" onClick={() => event("Clicked Header Menu Link")}>
             <a className={styles.link}>Menu</a>
           </Link>
-          <Link href="#location">
+          <Link href="#location" onClick={() => event("Clicked Header Location Link")}>
             <a className={styles.link}>Location</a>
           </Link>
         </div>

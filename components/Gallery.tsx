@@ -5,6 +5,7 @@ import styles from "./Gallery.module.scss"
 
 import LeftCaretIcon from "../public/icons/left-caret.svg"
 import RightCaretIcon from "../public/icons/right-caret.svg"
+import { event } from "nextjs-google-analytics"
 
 const images = [
   "LDS02238.jpg",
@@ -82,20 +83,30 @@ export const Gallery: React.FC = () => {
       <div className={styles.carousel}>
         <div
           className={[styles.nav, styles.nav_left, showLeftNav ? "" : styles.nav_hide].join(" ")}
-          onClick={prev}
+          onClick={() => {
+            event("Clicked Gallery Previous Button")
+            prev()
+          }}
         >
           <LeftCaretIcon />
         </div>
         <div
           className={[styles.nav, styles.nav_right, showRightNav ? "" : styles.nav_hide].join(" ")}
-          onClick={next}
+          onClick={() => {
+            event("Clicked Gallery Next Button")
+            next()
+          }}
         >
           <RightCaretIcon />
         </div>
         <div className={styles.list} ref={listRef}>
-          {images.map((image) => {
+          {images.map((image, index) => {
             return (
-              <div key={image} className={styles.imageContainer}>
+              <div
+                key={image}
+                className={styles.imageContainer}
+                onClick={() => event("Clicked Gallery Image", { value: index })}
+              >
                 <ExportedImage
                   src={`/gallery/${image}`}
                   alt="Food"

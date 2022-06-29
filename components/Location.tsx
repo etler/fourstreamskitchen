@@ -1,3 +1,4 @@
+import { event } from "nextjs-google-analytics"
 import React from "react"
 
 import styles from "./Location.module.scss"
@@ -13,11 +14,16 @@ export const Location: React.FC = () => {
             href="https://www.google.com/maps?q=7960+Soquel+Drive,+Aptos,+CA+95003"
             target="_blank"
             className={styles.info}
+            onClick={() => event("Clicked Location Maps")}
           >
             7960 Soquel Drive, Aptos, CA 95003
           </a>
           <span className={styles.title}>Phone</span>
-          <a href="tel:8316852121" className={styles.info}>
+          <a
+            href="tel:8316852121"
+            className={styles.info}
+            onClick={() => event("Clicked Location Phone")}
+          >
             (831) 685-2121
           </a>
         </div>
