@@ -5,6 +5,7 @@ import { Menu } from "./Menu"
 import { Hero } from "./Hero"
 
 import styles from "./Main.module.scss"
+import { About } from "./About"
 import { Hours } from "./Hours"
 import { Gallery } from "./Gallery"
 import { Notice } from "./Notice"
@@ -16,6 +17,7 @@ export const Main: React.FC = () => {
         <Header />
         <Notice />
         <Hero />
+        <About />
         <Hours />
         <Gallery />
         <Menu />
