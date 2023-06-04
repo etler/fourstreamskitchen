@@ -11,11 +11,11 @@ export const Hours: React.FC = () => {
         <span className={styles.hourTitle}>Hours</span>
         <div className={styles.hours}>
           <span className={styles.days}>Sunday - Thursday</span>
-          <span className={styles.time}>11:30pm - 9:00pm</span>
+          <span className={styles.time}>11:30am - 9:00pm</span>
         </div>
         <div className={styles.hours}>
           <span className={styles.days}>Friday - Saturday</span>
-          <span className={styles.time}>11:30pm - 9:30pm</span>
+          <span className={styles.time}>11:30am - 9:30pm</span>
         </div>
         <span className={styles.hourTitle}>Lunch Special</span>
         <div className={styles.hours}>
