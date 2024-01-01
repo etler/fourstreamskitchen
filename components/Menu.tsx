@@ -323,7 +323,6 @@ const lunchSections: MenuSectionProps[] = [
       { name: "Spicy Garlic Prawns", price: 14.75, spiciness: 1 },
       { name: "Prawns with Green Beans", price: 14.75 },
     ],
-    description: ["Except Holidays & Sundays 11:30AM - 2:30PM Monday - Saturday"],
   },
   {
     items: [
@@ -347,7 +346,9 @@ export const Menu: React.FC = () => {
       <div className={styles.menu}>
         <h2 className={styles.title}>Menu</h2>
         <h3 className={styles.mealTitle}>Lunch</h3>
-        <span className={styles.description}>Monday - Saturday: 11:30am - 2:30pm</span>
+        <span className={styles.description}>
+          Monday - Saturday: 11:30am - 2:30pm Except Holidays
+        </span>
         <div className={styles.section}>
           {lunchSections.map((section) => {
             return (
