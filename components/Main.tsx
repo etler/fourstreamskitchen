@@ -15,7 +15,7 @@ export const Main: React.FC = () => {
     <>
       <main className={styles.main}>
         <Header />
-        <Notice />
+        <Notice body="Closed July 4th" />
         <Hero />
         <About />
         <Hours />
