@@ -22,6 +22,10 @@ export const Hours: React.FC = () => {
           <span className={styles.days}>July 4th</span>
           <span className={styles.time}>Closed</span>
         </div>
+        <div className={styles.hours}>
+          <span className={styles.days}>July 6th</span>
+          <span className={styles.time}>4:30pm - 9:00pm</span>
+        </div>
         <span className={styles.hourTitle}>Lunch Special</span>
         <div className={styles.hours}>
           <span className={styles.days}>Monday - Friday</span>
